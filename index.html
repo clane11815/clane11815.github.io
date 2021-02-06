@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Caleb Projects</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <p>Caleb Projects</p>
-    <ul>
-      <li> <a href="mariopyramid.html">Mario Pyramid</a></li>
-  </body>
+<head>
+    <style>
+        #pyramid {
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mario 2</h1>
+    <h3>
+        Behold this wonderful pyramid:
+    </h3>
+
+    <div id="pyramid">
+        <!-- Our pyramid will go inside here -->
+        <p id="pyramidpara"></p>
+    </div>
+
+    <script>
+      printPyramid(10);
+      function printPyramid(height) {
+        var x;
+        var y;
+        var rowStr;
+        let space = "...........";
+        let block = "#";
+        for (x = 1; x <= height; x++) {
+          block = block + "#";
+          space = space.substring(1);
+          rowStr = (space + block);
+          let para = document.createElement("p");
+          let node = document.createTextNode(rowStr);
+          para.appendChild(node);
+          let element = document.getElementById("pyramid");
+          element.appendChild(para);
+        }
+      }
+      
+    </script>
+</body>
 </html>

@@ -1,5 +1,5 @@
 
-printPyramid(5);
+printPyramid(10);
 // TODO #2
 // Take in user input for the height
 
@@ -24,12 +24,13 @@ function printPyramid(height) {
   
   var x;
   var y;
-  let space = "           ";
+  let space = "...........";
   let block = "#";
   for (x = 1; x <= height; x++) {
     block = block + "#";
     space = space.substring(1);
-    console.log(space + block);
+    var rowStr = (space + block);
+    console.log(rowStr);
   }
 
     
