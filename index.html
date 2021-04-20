@@ -3,9 +3,37 @@
 <head>
     <style>
 
+        #header {
+          color: white;
+          background-color: purple;
+          padding: 30px;
+        }
+
+        #main {
+          color: purple;
+          font-size: large;
+          margin-top: auto;
+          margin-bottom: auto;
+          margin-left: auto;
+          margin-right: auto;
+          width: 700px;
+          height: 550px;
+          border: 2px;
+          border-style: solid;
+          border-radius: 3px;
+          background-color: whitesmoke;
+        }
+
+        #labels {
+          background-color: gainsboro;
+          padding: 10px;
+        }
+
         #pyramid {
             line-height: 0;
             font-size: 30px;
+            font-weight: bold;
+            font-size: xx-large;
         }
 
         body {
@@ -15,29 +43,30 @@
     </style>
 </head>
 <body >
-    <h1>Mario 3</h1>
+    <h1 id="header">Pyramid Slide</h1>
 
-    <br>
+    <div id="main">
+      <div id="labels">
+        <label background-color:>Brick symbol:</label>
 
-    <p>When you say</p>
+        <select onchange="determineHeightAndThenDrawPyramid()" name="brick" id="brick">
+          <option value = "#" selected>#</option>
+          <option value = "@">@</option>
+          <option value = "X">X</option>
+          <option value = "$">$</option>
+        </select>
 
-    <p><strong>Draw a pyramid</strong></p>
+        <label>How high?</label>
 
-    <p>I say:</p>
+        <input onchange="determineHeightAndThenDrawPyramid()" type="range" min="0" max="12" value="0" class="slider" name="height" id="height"/>
 
-    <br>
+        <p id="heightvalue"></p>
+      </div>
 
-    <label>How high?</label>
+      <br><br>
 
-    <input type="text" id="height"/>
-
-    <br><br>
-
-    <button id="button">Draw a pyramid</button>
-
-    <br><br>
-
-    <div id="pyramid"></div>
+      <div id="pyramid"></div>
+    </div>
 
     <script src="mariopyramid.js"></script>
 </body>
